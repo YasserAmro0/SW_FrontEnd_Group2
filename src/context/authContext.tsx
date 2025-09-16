@@ -2,7 +2,7 @@ import React, {
   useState, useEffect, useMemo,
 } from 'react';
 import { axiosInstance } from '../utils/apis';
-import { AppContextProps, UserData } from './types';
+import type { AppContextProps, UserData } from './types';
 import userDataContext from './contextData';
 import Spinner from './spinner';
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useState, useContext } from 'react';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { enqueueSnackbar, VariantType } from 'notistack';
+import { enqueueSnackbar, type VariantType } from 'notistack';
 import { LoadingButton } from '@mui/lab';
 
 import {

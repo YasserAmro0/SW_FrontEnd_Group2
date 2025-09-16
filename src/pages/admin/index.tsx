@@ -1,7 +1,7 @@
 import {
   Container, Pagination,
 } from '@mui/material';
-import { useEffect, useState, ChangeEvent } from 'react';
+import { useEffect, useState, type ChangeEvent } from 'react';
 import { AxiosError } from 'axios';
 import { enqueueSnackbar } from 'notistack';
 import TherapistTable from '../../components/dashboard/table/therapists';

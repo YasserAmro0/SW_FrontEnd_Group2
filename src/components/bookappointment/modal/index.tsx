@@ -4,7 +4,7 @@ import {
   Container, Paper, IconButton, Typography, Stepper, Step, StepLabel, Box, Button, Modal,
 } from '@mui/material';
 import * as React from 'react';
-import { FormikProps, useFormik } from 'formik';
+import { type FormikProps, useFormik } from 'formik';
 import { ModelStyle } from '../../../pages';
 import BookAppointment from '../selectTime';
 import StripePaymentForm from '../payment';

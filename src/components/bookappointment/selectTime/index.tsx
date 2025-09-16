@@ -9,7 +9,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useSnackbar } from 'notistack';
 import axiosInstance from '../../../utils/apis/axios';
 import getTimeRange from '../../../utils/TimeRange';
-import ElementTimeType from './type';
+import type ElementTimeType from './type';
 
 const BookAppointment = ({ formik }: any) => {
   const currentDate = dayjs().format('YYYY-MM-DD').toString();

@@ -1,12 +1,25 @@
+import type { ReactElement } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { SnackbarProvider } from 'notistack';
+import router from './routes/index.tsx';
+import { AuthContext, ThemeProvider } from './context';
+import './index.css';
 
-function App() {
+const App = (): ReactElement => (
+  <ThemeProvider>
+    <SnackbarProvider
+      maxSnack={3}
+      anchorOrigin={
+        { vertical: 'top', horizontal: 'right' }
+      }
+    >
+      <AuthContext>
+        <RouterProvider router={router} />
+      </AuthContext>
 
-  return (
-    <h1>
-      Hello World!
-      
-    </h1>
-  )
-}
+    </SnackbarProvider>
+  </ThemeProvider>
 
-export default App
+);
+
+export default App;

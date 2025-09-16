@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { ThemeProvider } from '@mui/material';
-import { AppContextProps } from './types';
+import type { AppContextProps } from './types';
 import { theme, darkTheme } from '../theme/theme';
 import ThemeContext from './themeContext';
 
