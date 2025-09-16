@@ -22,8 +22,7 @@ const TypographyBody1: Type = {
   fontSize: '18.52px',
   lineHeight: '28px',
   width: 'fit-content',
-  heigh: 'fit-content',
-  textAlign: 'center',
+  height: 'fit-content', textAlign: 'center',
   mx: 'auto',
   // mt: '-20px',
   '@media (max-width: 600px)': {

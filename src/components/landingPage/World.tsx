@@ -36,10 +36,13 @@ const World = () => (
           <br />
           receive the best of the best in mental health care.
         </Typography>
-        <Button variant="contained" sx={{ borderColor: 'primary.main' }}>
-          <Link to="/therapists" style={{ textDecoration: 'none', color: 'white' }}>
-            Book an appointment
-          </Link>
+        <Button
+          variant="contained"
+          component={Link}
+          to="/therapists"
+          sx={{ textDecoration: 'none' }}
+        >
+          Book an appointment
         </Button>
       </Grid>
       <Grid item lg={5} xs={12} sx={{ mt: 5 }}>

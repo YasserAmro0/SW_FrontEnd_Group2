@@ -24,18 +24,18 @@ const OnlineMedical = () => {
               mb: 4, mt: 3, color: '#90AAB9', fontSize: 15,
             }}
             >
-              Join Us to get goodd with the tops and support you need to
-              manage your memory health and lead a health
+              Join us to get good with the tips and support you need to
+              manage your memory health and lead a healthy life
             </Typography>
             {!userContext?.userData
               && (
-              <Link to="/signup" style={{ textDecoration: 'none', color: 'red' }}>
-                <Button variant="contained" sx={{ borderColor: 'primary.main' }}>
+                <Link to="/signup" style={{ textDecoration: 'none', color: 'red' }}>
+                  <Button variant="contained" sx={{ borderColor: 'primary.main' }}>
 
-                  SIGN UP
+                    SIGN UP
 
-                </Button>
-              </Link>
+                  </Button>
+                </Link>
               )}
 
           </Grid>
@@ -51,18 +51,18 @@ const OnlineMedical = () => {
               mb: 4, mt: 3, color: '#90AAB9', fontSize: 15,
             }}
             >
-              Join us and informality, Improving Communication,
-              Enhanceed Collaboration, and it can also help to Reduce Costs,
+              Join us for informality, Improving Communication,
+              Enhanced Collaboration, and it can also help to Reduce Costs,
               and Improve Client Service.
             </Typography>
             {!userContext?.userData && (
-            <Link to="/signup" style={{ textDecoration: 'none', color: 'white' }}>
-              <Button variant="contained" sx={{ borderColor: 'primary.main' }}>
+              <Link to="/signup" style={{ textDecoration: 'none', color: 'white' }}>
+                <Button variant="contained" sx={{ borderColor: 'primary.main' }}>
 
-                JOIN US
+                  JOIN US
 
-              </Button>
-            </Link>
+                </Button>
+              </Link>
             )}
 
           </Grid>

@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
 import { TableRow, TableCell, Checkbox } from '@mui/material';
 import dayjs from 'dayjs';
-import { useSnackbar, VariantType } from 'notistack';
+import { useSnackbar, type VariantType } from 'notistack';
 import { bodyCell } from './style';
 import axiosInstance from '../../../utils/apis/axios';
-import { TRow } from './types';
+import type { TRow } from './types';
 import { ThemeContext } from '../../../context';
 
 const RowTable = ({ appointment }:TRow) => {
