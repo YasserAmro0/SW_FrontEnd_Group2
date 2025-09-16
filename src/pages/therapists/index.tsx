@@ -1,5 +1,5 @@
 import {
-  useState, useEffect, ChangeEvent, useContext,
+  useState, useEffect, type ChangeEvent, useContext,
 } from 'react';
 import {
   Container, InputBase,

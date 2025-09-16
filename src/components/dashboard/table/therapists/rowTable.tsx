@@ -8,7 +8,7 @@ import { LoadingButton } from '@mui/lab';
 
 import { AxiosError } from 'axios';
 import { axiosInstance } from '../../../../utils/apis';
-import { Therapist } from './types';
+import type { Therapist } from './types';
 
 const RowTable = ({ therapist }: {therapist: Therapist}) => {
   const [active, setActive] = useState<boolean>(therapist.user.isActive);

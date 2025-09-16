@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from 'react';
+import { type SyntheticEvent, useState } from 'react';
 import { CircularProgress, Container } from '@mui/material';
 import {
   PaymentElement,
@@ -10,7 +10,7 @@ import { useSnackbar } from 'notistack';
 import { AxiosError } from 'axios';
 import { axiosInstance } from '../../utils/apis';
 
-const CheckoutForm = ({ id, setOpen }:any) => {
+const CheckoutForm = ({ id, setOpen }: any) => {
   const { enqueueSnackbar } = useSnackbar();
   const stripe = useStripe();
   const elements = useElements();

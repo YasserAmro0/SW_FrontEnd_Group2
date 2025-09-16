@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSnackbar, VariantType } from 'notistack';
+import { useSnackbar, type VariantType } from 'notistack';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';

@@ -1,10 +1,10 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { type Dispatch, type SetStateAction, useState } from 'react';
 import {
   Box, Grid, Modal, Fade, Button, Typography, Container,
 } from '@mui/material';
 import { DatePicker, LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { FormikErrors, useFormik } from 'formik';
+import { type FormikErrors, useFormik } from 'formik';
 import DeleteIcon from '@mui/icons-material/Delete';
 import moment from 'moment';
 import { AxiosError } from 'axios';
@@ -120,7 +120,7 @@ const AppointmentsModal = ({ handleClose, open, setOpenAppointmentsModal }: Prop
                           textField: {
                             helperText: formik.touched?.date?.to && formik.errors?.date?.to,
                             error: Boolean(formik.touched?.date?.to)
-                            && Boolean(formik.errors?.date?.to),
+                              && Boolean(formik.errors?.date?.to),
                             size: 'small',
                             onBlur: formik.handleBlur,
                             name: 'date.to',
@@ -149,8 +149,8 @@ const AppointmentsModal = ({ handleClose, open, setOpenAppointmentsModal }: Prop
                                   size: 'small',
                                   name: `time.${[item - 1]}.from`,
                                   helperText: (formik.touched?.time?.[item - 1]?.from
-                                  && (formik.errors.time?.[item - 1] as
-                                    FormikErrors<{ from: string, to: string}>)?.from),
+                                    && (formik.errors.time?.[item - 1] as
+                                      FormikErrors<{ from: string, to: string }>)?.from),
                                   error: Boolean(formik.touched?.time?.[item - 1]?.from)
                                     && Boolean((formik.errors?.time?.[item - 1] as
                                       FormikErrors<{ from: string; to: string; }>)?.from),
@@ -174,11 +174,11 @@ const AppointmentsModal = ({ handleClose, open, setOpenAppointmentsModal }: Prop
                                   name: `time.${[item - 1]}.to`,
 
                                   helperText: (formik.touched?.time?.[item - 1]?.to
-                                      && (formik.errors.time?.[item - 1] as
-                                        FormikErrors<{ from: string, to: string}>)?.to),
+                                    && (formik.errors.time?.[item - 1] as
+                                      FormikErrors<{ from: string, to: string }>)?.to),
                                   error: Boolean(formik.touched?.time?.[item - 1]?.to)
-                                        && Boolean((formik.errors?.time?.[item - 1] as
-                                          FormikErrors<{ from: string; to: string; }>)?.to),
+                                    && Boolean((formik.errors?.time?.[item - 1] as
+                                      FormikErrors<{ from: string; to: string; }>)?.to),
                                   onBlur: formik.handleBlur,
                                 },
                               }}

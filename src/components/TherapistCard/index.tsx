@@ -5,7 +5,7 @@ import {
 import { Link } from 'react-router-dom';
 import classes from './classes';
 
-import { TherapistCardProps } from './types';
+import type { TherapistCardProps } from './types';
 
 const GridCard = ({ therapist }: TherapistCardProps) => (
   <Grid item xs={12} sm={6} md={4} lg={3} xl={3} sx={{ marginTop: 5 }}>
