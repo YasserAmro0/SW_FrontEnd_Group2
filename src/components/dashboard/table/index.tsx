@@ -1,7 +1,7 @@
-import { Table as TableMiu, TableContainer } from '@mui/material';
+import { Table as TableMiu, TableContainer } from "@mui/material";
 
-import Paper from '@mui/material/Paper';
-import { ReactNode } from 'react';
+import Paper from "@mui/material/Paper";
+import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;

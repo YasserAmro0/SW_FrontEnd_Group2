@@ -1,18 +1,12 @@
-import {
-  Container,
-  Pagination,
+import { Container, Pagination } from "@mui/material";
+import { useEffect, useState, useContext, type ChangeEvent } from "react";
+import { AxiosError } from "axios";
+import { enqueueSnackbar } from "notistack";
 
-} from '@mui/material';
-import {
-  useEffect, useState, ChangeEvent, useContext,
-} from 'react';
-import { AxiosError } from 'axios';
-import { enqueueSnackbar } from 'notistack';
-
-import TherapistTable from '../../components/dashboard/table/therapists';
-import Filter from '../../components/dashboard/filter/filter';
-import { axiosInstance } from '../../utils/apis';
-import { ThemeContext } from '../../context';
+import TherapistTable from "../../components/dashboard/table/therapists";
+import Filter from "../../components/dashboard/filter/filter";
+import { axiosInstance } from "../../utils/apis";
+import { ThemeContext } from "../../context";
 
 const AdminTherapists = () => {
   const themes = useContext(ThemeContext);
@@ -32,7 +26,7 @@ const AdminTherapists = () => {
     const getTherapistData = async () => {
       try {
         setLoading(true);
-        const response = await axiosInstance.get('/admin/therapists', {
+        const response = await axiosInstance.get("/admin/therapists", {
           params: {
             page: currentPage,
             active,
@@ -43,10 +37,10 @@ const AdminTherapists = () => {
         setLoading(false);
       } catch (error) {
         if (error instanceof AxiosError) {
-          enqueueSnackbar(error.message, { variant: 'error' });
+          enqueueSnackbar(error.message, { variant: "error" });
           setLoading(false);
         } else {
-          enqueueSnackbar('Something went wrong', { variant: 'error' });
+          enqueueSnackbar("Something went wrong", { variant: "error" });
           setLoading(false);
         }
       }
@@ -55,19 +49,20 @@ const AdminTherapists = () => {
   }, [currentPage, active]);
 
   return (
-    <div style={{
-      display: 'flex',
-      backgroundColor: themes?.themeMode === 'dark' ? '#181A1B' : '#F4F7FF',
-    }}
+    <div
+      style={{
+        display: "flex",
+        backgroundColor: themes?.themeMode === "dark" ? "#181A1B" : "#F4F7FF",
+      }}
     >
-      <Container sx={{ marginTop: '50px' }}>
+      <Container sx={{ marginTop: "50px" }}>
         <Filter
           setActive={setActive as typeof useState<boolean | null>}
           setCurrentPage={setCurrentPage as typeof useState<number>}
         />
         <TherapistTable therapists={therapists} loading={loading} />
         <Pagination
-          sx={{ display: 'block', margin: '10px 20px' }}
+          sx={{ display: "block", margin: "10px 20px" }}
           count={totalPages}
           page={currentPage}
           onChange={handlePageChange}

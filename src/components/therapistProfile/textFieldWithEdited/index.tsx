@@ -1,19 +1,23 @@
 /* eslint-disable react/jsx-indent */
-import TextField from '@mui/material/TextField';
-import React, { useState } from 'react';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Edit from '@mui/icons-material/Edit';
-import { CircularProgress } from '@mui/material';
-import { enqueueSnackbar } from 'notistack';
-import { AxiosError } from 'axios';
-import LoadingButton from '@mui/lab/LoadingButton';
-import getStyle from './style';
-import axiosInstance from '../../../utils/apis/axios';
-import Props from './types';
+import TextField from "@mui/material/TextField";
+import React, { useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Edit from "@mui/icons-material/Edit";
+import { CircularProgress } from "@mui/material";
+import { enqueueSnackbar } from "notistack";
+import { AxiosError } from "axios";
+import LoadingButton from "@mui/lab/LoadingButton";
+import getStyle from "./style";
+import axiosInstance from "../../../utils/apis/axios";
+import type { Props } from "./types";
 
 const EditableTextField: React.FC<Props> = ({
-  value, dataType, onChange, isProfileOwner, themeMode,
+  value,
+  dataType,
+  onChange,
+  isProfileOwner,
+  themeMode,
 }) => {
   const [editMode, setEditMode] = useState(false);
   const [mouseOver, setMouseOver] = useState(false);
@@ -31,15 +35,14 @@ const EditableTextField: React.FC<Props> = ({
   const handleUpdate = async () => {
     try {
       setIsLoading(true);
-      await axiosInstance.patch('therapists/', {
+      await axiosInstance.patch("therapists/", {
         [dataType]: value,
-
       });
       setEditMode(false);
       setIsLoading(false);
     } catch (error) {
       const axiosError = error as AxiosError;
-      enqueueSnackbar(axiosError.message, { variant: 'error' });
+      enqueueSnackbar(axiosError.message, { variant: "error" });
       setIsLoading(false);
     }
   };
@@ -57,12 +60,10 @@ const EditableTextField: React.FC<Props> = ({
       sx={style}
       InputProps={{
         disableUnderline: true,
-        endAdornment:
+        endAdornment: (
           <InputAdornment position="end">
             {isProfileOwner ? (
-              <IconButton
-                onClick={handleClick}
-              >
+              <IconButton onClick={handleClick}>
                 <Edit />
               </IconButton>
             ) : null}
@@ -76,8 +77,8 @@ const EditableTextField: React.FC<Props> = ({
                 Save
               </LoadingButton>
             )}
-          </InputAdornment>,
-
+          </InputAdornment>
+        ),
       }}
     />
   );

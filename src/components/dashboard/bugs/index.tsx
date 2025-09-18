@@ -1,16 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import {
-  Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Button,
-} from '@mui/material';
-import { AxiosError } from 'axios';
-import { enqueueSnackbar } from 'notistack';
-import DeleteIcon from '@mui/icons-material/Delete';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import InfoIcon from '@mui/icons-material/Info';
-import { axiosInstance } from '../../../utils/apis';
-import { dashHead, tableContainer } from './classes';
-import ModalGitHub from '../../modalForGithub';
-import Bug from './types';
+  Table,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Button,
+} from "@mui/material";
+import { AxiosError } from "axios";
+import { enqueueSnackbar } from "notistack";
+import DeleteIcon from "@mui/icons-material/Delete";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InfoIcon from "@mui/icons-material/Info";
+import { axiosInstance } from "../../../utils/apis";
+import { dashHead, tableContainer } from "./classes";
+import ModalGitHub from "../../modalForGithub";
+import type { Bug } from "./types";
 
 const Bugs = () => {
   const [bugs, setBugs] = useState<Bug[]>([]);
@@ -22,11 +28,11 @@ const Bugs = () => {
   useEffect(() => {
     const getBugs = async () => {
       try {
-        const response = await axiosInstance.get('/bugs');
+        const response = await axiosInstance.get("/bugs");
         setBugs(response.data);
       } catch (error) {
         const axiosError = error as AxiosError;
-        enqueueSnackbar(axiosError.message, { variant: 'error' });
+        enqueueSnackbar(axiosError.message, { variant: "error" });
       }
     };
     getBugs();
@@ -36,10 +42,10 @@ const Bugs = () => {
     try {
       await axiosInstance.delete(`/bugs/${id}`);
       setBugs((prevBugs) => prevBugs.filter((bug) => bug.id !== id));
-      enqueueSnackbar('Bug deleted successfully.', { variant: 'success' });
+      enqueueSnackbar("Bug deleted successfully.", { variant: "success" });
     } catch (error) {
       const axiosError = error as AxiosError;
-      enqueueSnackbar(axiosError.message, { variant: 'error' });
+      enqueueSnackbar(axiosError.message, { variant: "error" });
     }
   };
 
@@ -68,7 +74,7 @@ const Bugs = () => {
         <TableBody>
           {bugs.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={5} align="center" sx={{ fontWeight: 'bold' }}>
+              <TableCell colSpan={5} align="center" sx={{ fontWeight: "bold" }}>
                 <InfoIcon fontSize="small" color="error" sx={{ mr: 1 }} />
                 No bugs to display.
               </TableCell>
@@ -84,7 +90,7 @@ const Bugs = () => {
                   <Button
                     variant="contained"
                     startIcon={<DeleteIcon />}
-                    sx={{ backgroundColor: '#C62828', mr: 2 }}
+                    sx={{ backgroundColor: "#C62828", mr: 2 }}
                     onClick={() => handleDeleteBugs(bug.id)}
                   >
                     Delete
@@ -92,7 +98,7 @@ const Bugs = () => {
                   <Button
                     variant="contained"
                     startIcon={<GitHubIcon />}
-                    sx={{ backgroundColor: '#000' }}
+                    sx={{ backgroundColor: "#000" }}
                     onClick={handleOpen}
                   >
                     To GitHub

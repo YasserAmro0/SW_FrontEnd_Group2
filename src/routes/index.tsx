@@ -1,61 +1,77 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from "react-router-dom";
 import {
-  LandingPage, Login, Signup, Therapists, TherapistPage, LoginAdmin, NotFound,
-  BugReportPage, AdminTherapists, AdminBugs,
-} from '../pages';
-import Layout from '../layout/Layout';
-import { ProtectedAdmin, ProtectedUser } from './protected';
+  LandingPage,
+  Login,
+  Signup,
+  Therapists,
+  TherapistPage,
+  LoginAdmin,
+  NotFound,
+} from "../pages";
+import Layout from "../layout/Layout";
+import { ProtectedAdmin, ProtectedUser } from "./protected";
+import AdminTherapists from "../pages/adminTherapists";
+import BugReportPage from "../pages/bugsReport";
+import AdminBugs from "../pages/adminBugs";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: '',
+        path: "",
         element: <LandingPage />,
       },
       {
-        path: 'therapists',
+        path: "therapists",
         element: <Therapists />,
       },
       {
-        path: 'therapist/:id',
+        path: "therapist/:id",
         element: <TherapistPage />,
       },
       {
-        path: 'bug-report',
+        path: "bug-report",
         element: <BugReportPage />,
       },
     ],
   },
   {
-    path: 'signup',
-    element: <ProtectedUser><Signup /></ProtectedUser>,
+    path: "signup",
+    element: (
+      <ProtectedUser>
+        <Signup />
+      </ProtectedUser>
+    ),
   },
   {
-    path: 'login',
-    element: <ProtectedUser><Login /></ProtectedUser>,
+    path: "login",
+    element: (
+      <ProtectedUser>
+        <Login />
+      </ProtectedUser>
+    ),
   },
   {
-    path: 'admin/login',
+    path: "admin/login",
     element: <LoginAdmin />,
   },
   {
-    path: 'admin/therapists',
+    path: "admin/therapists",
     element: <ProtectedAdmin />,
     children: [
       {
-        path: '',
+        path: "",
         element: <AdminTherapists />,
       },
       {
-        path: 'bugs',
+        path: "bugs",
         element: <AdminBugs />,
       },
     ],
   },
-  { path: '*', element: <NotFound /> },
+  { path: "*", element: <NotFound /> },
 ]);
 
 export default router;

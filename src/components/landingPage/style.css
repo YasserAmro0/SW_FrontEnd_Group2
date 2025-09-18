@@ -4,18 +4,14 @@
 }
 
 .dark {
-  background-color: #181A1B;
+  background-color: #181a1b;
 }
-
-
-
 
 @media only screen and (max-width: 600px) {
   .hersection {
     height: 50rem;
     text-align: center;
   }
-
 
   .hersection {
     background-color: var(--body-bg-color);
@@ -28,14 +24,14 @@
   }
 
   .dark {
-    background-color: #181A1B;
+    background-color: #181a1b;
   }
 
   .section-title {
     font-size: 2.8rem;
     font-weight: 800;
     margin-bottom: 2.5rem;
-    color: var(--primary-color, #516EFF);
+    color: var(--primary-color, #516eff);
     text-align: center;
   }
 
@@ -65,7 +61,7 @@
   .hero-headline {
     font-size: 3.2rem;
     font-weight: 900;
-    color: var(--primary-color, #516EFF);
+    color: var(--primary-color, #516eff);
     margin-bottom: 1.5rem;
     text-align: center;
   }
@@ -82,7 +78,7 @@
     font-weight: 700;
     padding: 0.8rem 2.2rem;
     border-radius: 8px;
-    background: linear-gradient(90deg, #516EFF 60%, #7B8CFF 100%);
+    background: linear-gradient(90deg, #516eff 60%, #7b8cff 100%);
     color: #fff;
     box-shadow: 0 2px 8px rgba(81, 110, 255, 0.12);
     border: none;
@@ -91,7 +87,7 @@
   }
 
   .hero-btn:hover {
-    background: linear-gradient(90deg, #7B8CFF 60%, #516EFF 100%);
+    background: linear-gradient(90deg, #7b8cff 60%, #516eff 100%);
     box-shadow: 0 4px 16px rgba(81, 110, 255, 0.18);
   }
 
@@ -130,3 +126,4 @@
       margin: 0.5rem;
     }
   }
+}
