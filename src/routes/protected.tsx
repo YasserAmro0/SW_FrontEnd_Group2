@@ -1,19 +1,18 @@
-import { type ReactNode, useContext } from 'react';
+import { ReactNode, useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 import { userDataContext } from '../context';
-import Admin from '../pages/admin';
+import LayoutAdmin from '../layout/LayoutAdmin';
 
 interface TypeChildren {
-    children: ReactNode;
+  children: ReactNode;
 
 }
 const ProtectedAdmin = () => {
   const userContext = useContext(userDataContext);
-  console.log(userContext?.userData);
   if (userContext?.userData?.role !== 'admin') {
     return <Navigate to="/" replace />;
   }
-  return <Admin />;
+  return <LayoutAdmin />;
 };
 
 const ProtectedUser = ({ children }: TypeChildren) => {
