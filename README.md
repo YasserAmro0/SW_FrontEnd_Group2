@@ -9,8 +9,6 @@ Ntherapy
 
 
 Ntherapy is a web application that helps people to find the right therapist for them. It allows users to search for **Verified** therapists and view their specialty. Users can also book an appointment with the therapist they choose.
-## <a href='https://ntherapy-react.vercel.app/'>View Demo</a>
-- <a href='https://github.com/YasserAmro0/Ntherapy-express'>go to Ntherapy-express repo</a>
 
 
 ## Problem
